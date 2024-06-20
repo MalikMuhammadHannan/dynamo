@@ -1,33 +1,206 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Michroma */
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Michroma&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+* {
+  /* border: 1px solid white; */
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  scroll-behavior: smooth;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+.swiper-pagination-fraction,
+.swiper-pagination-custom,
+.swiper-horizontal > .swiper-pagination-bullets,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  bottom: 0px !important;
+  position: relative;
+}
+
+.feature .swiper-slide-active {
+  margin: auto !important;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    267deg,
+    #641ff9 27.93%,
+    #02c5f7 99.79%,
+    #c6bafd -31.69%,
+    #b7a2fd -22.78%
+  );
+  background-clip: text;
+  color: transparent;
+}
+.hero {
+  background-image: url("../../public/Images/animation.svg");
+  object-fit: contain;
+  background-size: cover;
+}
+.home:before {
+  content: "";
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(
+    180deg,
+    #109b9b -43.08%,
+    #052a2a -7.55%,
+    #2b7a7a 33.87%,
+    #27c793 82.91%
+  );
+  filter: blur(40px);
+  display: inline-block;
+  position: absolute;
+  top: -10px;
+  left: -30px;
+  border-radius: 100%;
+  opacity: 0.5;
+  z-index: 0;
+}
+@media screen and (max-width: 1000px) {
+  .home:before {
+    display: none;
   }
+}
+.navbarLi {
+  animation: all 2s ease;
+}
+.navbarLi:hover svg {
+  color: #641ff9 !important;
+}
+
+.navbarLi:hover {
+  background: linear-gradient(
+    267deg,
+    #641ff9 27.93%,
+    #02c5f7 99.79%,
+    #c6bafd -31.69%,
+    #b7a2fd -22.78%
+  );
+  background-clip: text;
+  color: transparent;
+}
+.active {
+  background: linear-gradient(
+    267deg,
+    #641ff9 27.93%,
+    #02c5f7 99.79%,
+    #c6bafd -31.69%,
+    #b7a2fd -22.78%
+  );
+  background-clip: text;
+  color: transparent;
+}
+.arrow:after {
+  content: "\f078";
+  font-family: "FontAwesome";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 13px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(
+    180deg,
+    #641ff9 27.93%,
+    #02c5f7 99.79%,
+    #c6bafd -31.69%,
+    #b7a2fd -22.78%
+  );
+}
+
+::-webkit-scrollbar-thumb {
+  background: #050828;
+}
+.clip-polygon {
+  clip-path: polygon(6% 0%, 100% 0%, 94% 100%, 0% 100%);
+}
+
+.container {
+  overflow: hidden;
+  height: 0;
+  transition: height 0.3s ease-in-out;
+}
+
+.slide-in {
+  animation: slideIn 0.5s forwards;
+}
+
+.slide-out {
+  animation: slideOut 0.5s forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    height: 0;
+  }
+  50% {
+    height: auto;
+  }
+  100% {
+    height: auto;
+  }
+}
+
+@keyframes slideOut {
+  0% {
+    height: auto;
+  }
+  50% {
+    height: auto;
+  }
+  100% {
+    height: 0;
+  }
+}
+/* .swiper-button-prev {
+  left: 0px !important;
+  position: absolute !important;
+} */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000 !important;
+  fill: black !important;
+  stroke: black !important;
+}
+.react-responsive-modal-modal {
+  top: 15%;
+  position: relative;
 }
